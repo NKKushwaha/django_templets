@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Count</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background:linear-gradient(130deg,rgb(13, 0, 255),rgb(37, 0, 78));
+            
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            color: white;
+            border: none;
+        }
+        #dec-btn
+        {
+            background-color: red;
+        }
+
+        #inc-btn
+        {
+            background-color: green;
+        }
+
+        #dec-btn:hover
+        {
+            background-color: rgb(213, 2, 2);
+        }
+
+        #inc-btn:hover
+        {
+            background-color: rgb(2, 91, 2);
+        }
+        div
+        {
+            background-color: aqua;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Count: <span id="count">0</span></h1>
+        <button id="dec-btn">Decrement</button>
+        <button id="inc-btn">Increment</button>
+    </div>
+    <script>
+        let count = 0;
+        let countTag = document.getElementById("count");
+
+        function decCount() 
+        {
+            if (count > 0) 
+            { 
+                count--;
+                countTag.textContent = count; 
+            }
+        }
+
+        function incCount() {
+            count++;
+            countTag.textContent = count;
+        }
+
+        document.getElementById("dec-btn").addEventListener("click", decCount);
+        document.getElementById("inc-btn").addEventListener("click", incCount);
+    </script>
+</body>
+</html>
